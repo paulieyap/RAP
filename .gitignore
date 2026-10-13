@@ -39,3 +39,7 @@ poetry.lock
 
 /bak
 
+
+# Downloaded archives (scripts/download_weights_and_demo_data.sh)
+/weights.zip
+/demo_example_data.zip

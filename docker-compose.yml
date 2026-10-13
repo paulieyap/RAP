@@ -7,7 +7,10 @@ services:
     volumes:
       - ./:/workspace
     ports:
-      - "7860:7860"
+      - "127.0.0.1:7860:7860"
+    environment:
+      # app.py opens a public *.gradio.live link unless this is "permanent"; keep it local-only
+      SHARE_URL: "${SHARE_URL:-permanent}"
     shm_size: "8gb"
     deploy:
       resources:
