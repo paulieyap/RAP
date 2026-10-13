@@ -82,6 +82,18 @@ Download model and example data:
 bash ./scripts/download_weights_and_demo_data.sh
 ```
 
+### Docker (alternative)
+
+To keep everything off your host system, use the provided Docker setup (requires Docker with the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)). The image runs `scripts/install.sh`, and the repo is mounted at `/workspace`, so code edits, weights and outputs stay in your local checkout:
+
+```
+export HOST_UID=$(id -u) HOST_GID=$(id -g)   # so files written to the repo are owned by you
+docker compose build
+docker compose up                            # downloads weights on first run, then serves the demo at http://localhost:7860
+```
+
+Run other commands in the same environment with `docker compose run --rm rap <command>`, e.g. `docker compose run --rm rap bash ./scripts/test_script_example.sh`.
+
 ## Run RAP
 
 Try the demo by:

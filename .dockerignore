@@ -1,0 +1,4 @@
+*
+!scripts/install.sh
+!requirements_other.txt
+!docker/entrypoint.sh
